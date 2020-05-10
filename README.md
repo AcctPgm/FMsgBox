@@ -1,14 +1,12 @@
 # FMsgBox
-Purpose   : Class module for a MsgBox replacement that allows text to be formatted
-            to a degree
-License   : GNU AFFERO GENERAL PUBLIC LICENSE, version 3
-Warranty  : None - Use is at your own risk. VBA code is intended for developers who
-            are responsible to ensure it is suitable for their intended use.
-Req'd Refs: frmMsgBox (form)
-            No other external refernces are used
+Purpose   : Class module for a MsgBox replacement that allows text to be formatted to a degree  
+License   : GNU AFFERO GENERAL PUBLIC LICENSE, version 3  
+Warranty  : None - Use is at your own risk. VBA code is intended for developers who are 
+responsible to ensure it is suitable for their intended use.  
+Req'd Refs: frmMsgBox (form)  
+            No other external refernces are used  
 
-Usage:
-~~~~~~
+## Usage:  
 a) This will show a message with 'done' in bold and red text, with an OK button.
       Dim fm as clsFMsgBox
       Set fm = new clsFMsgBox
@@ -29,22 +27,14 @@ b) This will show a bulletted list, and Yes and No buttons with No as the defaul
           Response = fn.Dsply
       End With
 
-Revision History:
-Rev       Date(yyyy/mm/dd)    Description
-**************************************************************************************
-1         2020-05-10          Initial Release
----------------------------------------------------------------------------------------
-
-Format tags:
-~~~~~~~~~~~~
+## Format tags:
 Apply formatting to the message (prompt) text by embedding tags in the text. Some tags
 are similar to HTML, but this isn't intended to be a full HTML interpreter so they
 generally don't follow.
 
 Most tags are paired as <start></stop>, with any text between receiving the format.
 
-Colours:
-~~~~~~~~
+### Colours:
 The exact RGB values for the colours may be set through FMsgBox properties
   <blue></blue>
   <red></red>
@@ -54,8 +44,7 @@ The exact RGB values for the colours may be set through FMsgBox properties
 
 The default text colour is black. It may be set through FMsgBox properties
 
-Formats:
-~~~~~~~~
+### Formats:
   <b></b>                     Bold
   <u></u>                     Underline
   <i></i>                     Italic
@@ -63,21 +52,19 @@ Formats:
                               By default the highlight is yellow but may be se
                               through FMsgBox properties
 
-Line break:
-~~~~~~~~~~~
+### Line break:
   <br>                        Start a new line
                               vbLf (chr$(10)), vbCr (13), vbCrLf (13+10), and
                               vbNewLine (13+10) are all treated as a <br>
 
-Tabs:
-~~~~~
+### Tabs:
   <tab>                       Advance to the next tab stop position
                               If the position isn't defined, text will be at the next
                               default tab position based on the text size.
   <tabset>                    Save the current position as a tab stop. This allows
                               taxt to be left-aligned as the position without
                               worrying about the width of preceeding text in the line
-  <tabunet>                   Remove the defined stop, reverting to default positiong
+  <tabunset>                   Remove the defined stop, reverting to default positiong
 
 Indents and Lists:
 ~~~~~~~~~~~~~~~~~~

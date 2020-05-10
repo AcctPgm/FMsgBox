@@ -91,7 +91,7 @@ Option Explicit
 '   <tabset>                    Save the current position as a tab stop. This allows
 '                               taxt to be left-aligned as the position without
 '                               worrying about the width of preceeding text in the line
-'   <tabunet>                   Remove the defined stop, reverting to default positiong
+'   <tabunset>                  Remove the defined stop, reverting to default positiong
 '
 ' Indents and Lists:
 ' ~~~~~~~~~~~~~~~~~~
