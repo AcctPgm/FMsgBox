@@ -1,11 +1,6 @@
 # FMsgBox
-Purpose   : Class module for a MsgBox replacement that allows text to be formatted to a degree  
-License   : GNU AFFERO GENERAL PUBLIC LICENSE, version 3  
-Warranty  : None - Use is at your own risk. VBA code is intended for developers who are 
-responsible to ensure it is suitable for their intended use.  
-Req'd Refs: frmMsgBox (form)  
-            No other external refernces are used  
-
+A VBA class module __clsFMsgBox__ and userform __frmFMsgBox__ that can act as a replacement
+for the standard MsgBox, but that allows some formatting of the message text using tags.
 ## Usage:  
 a) This will show a message with 'done' in bold and red text, with an OK button.
 ````
@@ -37,7 +32,6 @@ are similar to HTML, but this isn't intended to be a full HTML interpreter so th
 generally don't follow.
 
 Most tags are paired as <start></stop>, with any text between receiving the format.
-
 ### Colours:
 The exact RGB values for the colours may be set through FMsgBox properties
 ````
@@ -48,7 +42,6 @@ The exact RGB values for the colours may be set through FMsgBox properties
 <purple></purple>
 ````
 The default text colour is black. It may be set through FMsgBox properties
-
 ### Formats:
 ````
 <b></b>                     Bold
@@ -58,14 +51,12 @@ The default text colour is black. It may be set through FMsgBox properties
 							By default the highlight is yellow but may be set
 							through FMsgBox properties
 ````
-
 ### Line break:
 ````
 <br>                        Start a new line
                             vbLf (chr$(10)), vbCr (13), vbCrLf (13+10), and
                             vbNewLine (13+10) are all treated as a <br>
 ````
-
 ### Tabs:
 ````
 <tab>                       Advance to the next tab stop position
@@ -76,7 +67,6 @@ The default text colour is black. It may be set through FMsgBox properties
                             worrying about the width of preceeding text in the line
 <tabunset>                  Remove the defined stop, reverting to default positiong
 ````
-
 ### Indents and Lists:
 ````
  <indent></indent>           Indent text by the width of four space charactersa
