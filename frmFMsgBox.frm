@@ -13,6 +13,7 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
+
 Option Explicit
 
 '---------------------------------------------------------------------------------------
@@ -35,6 +36,7 @@ Option Explicit
 ' Rev       Date(yyyy/mm/dd)    Description
 ' **************************************************************************************
 ' 1         2020-05-10          Initial Release
+' 2			2020-05-13			Fix width when max form width is less than button width
 '---------------------------------------------------------------------------------------
 
 '---------------- Internal constants ---------------------------------------------------
@@ -256,11 +258,11 @@ Private Sub MsgFormButtonsEnable()
     ' ------------------------------------------------------------------------------
     
     If Me.Width < (FMsgBox.MarginLeft * 2 + FMsgBox.MarginRight + _
-            ((ButtonCount - 1) * FMsgBox.ButtonGapMin) + _
-            (ButtonCount * CommandButton1.Width)) Then
+    ((ButtonCount - 1) * FMsgBox.ButtonGapMin) + (ButtonCount * CommandButton1.Width)) Then
         Me.Width = FMsgBox.MarginLeft * 2 + FMsgBox.MarginRight + _
-            ((ButtonCount - 1) * FMsgBox.ButtonGapMin) + _
-            (ButtonCount * CommandButton1.Width)
+            ((ButtonCount - 1) * FMsgBox.ButtonGapMin) + (ButtonCount * CommandButton1.Width)
+        
+        If Me.Width > FMsgBox.FormWidthMax Then FMsgBox.FormWidthMax = Me.Width
     End If
     
     Exit Sub
